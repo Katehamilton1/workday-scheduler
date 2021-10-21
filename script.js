@@ -2,16 +2,15 @@ var saveBtn = $(".saveBtn");
 var time = $(".hour");
 var plan = $(".description");
 
-var hour7 = $("#7");
-var hour8 = $("#8");
-var hour9 = $("#9");
-var hour10 = $("#10");
-var hour11 = $("#11");
-var hour12 = $("#12");
-var hour1 =$("#13");
-var hour2 = $("#14");
-var hour3 = $("#15");
-
+var hour7 = $("#7").attr("id");
+var hour8 = $("#8").attr("id");
+var hour9 = $("#9").attr("id");
+var hour10 = $("#10").attr("id");
+var hour11 = $("#11").attr("id");
+var hour12 = $("#12").attr("id");
+var hour13 = $("#13").attr("id");
+var hour14 = $("#14").attr("id");
+var hour15 = $("#15").attr("id");
 
 
 var currentHour = moment().format('H');
@@ -26,13 +25,36 @@ saveBtn.on("click", function() {
   localStorage.setItem(time, plan);
 });
 
-function hourUpdate(){
-    var currentHour = moment().hours();
-    console.log(currentHour)
+
+   
+function colorChange () {
+    
+  var currentTime = moment().hours();
+
+// How the blocks know if they are past, present or future
+  $(".time-block").each(function () {
+      var scheduledTime = parseInt($(this).attr("id"));
+      console.log(scheduledTime);
+
+      if (currentTime > scheduledTime) {
+          $(this).removeClass("future");
+          $(this).removeClass("present");
+          $(this).addClass("past");
+      } else if (currentTime < scheduledTime) {
+          $(this).removeClass("present");
+          $(this).removeClass("past");
+          $(this).addClass("future");
+      } else {
+          $(this).removeClass("future");
+          $(this).removeClass("past");
+          $(this).addClass("present");
+      }
+  });
+}
+
+colorChange () 
 
 
-  
-    if (currentHour > hour7) {
-     console.log("it worked");
-    }
-  }
+
+
+
