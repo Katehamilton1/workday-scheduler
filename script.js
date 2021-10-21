@@ -11,6 +11,7 @@ var hour12 = $("#12").attr("id");
 var hour13 = $("#13").attr("id");
 var hour14 = $("#14").attr("id");
 var hour15 = $("#15").attr("id");
+var hour16 = $("#16").attr("id");
 
 
 var currentHour = moment().format('H');
