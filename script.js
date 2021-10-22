@@ -71,8 +71,8 @@ function colorChange () {
 
 colorChange () 
 
-$(function() {
-  $(".decription").draggable();
+$(function drag() {
+  $(".description").draggable();
 
   $('.trash').droppable({
       over: function(event, ui) {
@@ -81,3 +81,4 @@ $(function() {
   });
 });
 
+drag();
