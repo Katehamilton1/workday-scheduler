@@ -17,15 +17,30 @@ var hour17 = $("#17").attr("id");
 
 
 var currentHour = moment().format('H');
-
 // var currentTime = moment().format("MMMM Do YYYY h:mma");
 // $("#currentDay").text(currentTime);
 
+
+function loadSchedule() {
+  $("#7").children("textarea").text(localStorage.getItem ("7am"));
+  $("#8").children("textarea").text(localStorage.getItem);
+  $("#9").children("textarea").text(localStorage.getItem);
+  $("#10").children("textarea").text(localStorage.getItem);
+  $("#11").children("textarea").text(localStorage.getItem);
+  $("#12").children("textarea").text(localStorage.getItem);
+  $("#13").children("textarea").text(localStorage.getItem);
+  $("#14").children("textarea").text(localStorage.getItem);
+  $("#15").children("textarea").text(localStorage.getItem);
+  $("#16").children("textarea").text(localStorage.getItem);
+  $("#17").children("textarea").text(localStorage.getItem);
+}
+loadSchedule() 
 saveBtn.on("click", function() {
   time = $(this).siblings(".hour").text();
   plan = $(this).siblings(".description").val();
 
   localStorage.setItem(time, plan);
+
 });
 
 
