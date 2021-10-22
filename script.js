@@ -74,7 +74,7 @@ colorChange ()
 $(function() {
   $(".decription").draggable();
 
-  $('.description').droppable({
+  $('.trash').droppable({
       over: function(event, ui) {
           ui.draggable.remove();
       }
