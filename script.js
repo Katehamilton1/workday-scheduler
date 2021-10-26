@@ -60,25 +60,14 @@ function colorChange () {
       } else if (currentTime < scheduledTime) {
           $(this).removeClass("present");
           $(this).removeClass("past");
-          $(this).addClass("future");
+          $(this).children().eq(1).addClass("future");
       } else {
           $(this).removeClass("future");
           $(this).removeClass("past");
-          $(this).addClass("present");
+          $(this).children().eq(1).addClass("present");
       }
   });
 }
 
 colorChange () 
 
-$(function drag() {
-  $(".description").draggable();
-
-  $('.trash').droppable({
-      over: function(event, ui) {
-          ui.draggable.remove();
-      }
-  });
-});
-
-drag();
